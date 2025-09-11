@@ -2,29 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>作ったもの - 25c2.github.io</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ツール一覧</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>作ったもの</h1>
-        <nav>
-            <a href="index.html">ホーム</a>
-        </nav>
+    <header class="hero is-primary is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-4">ツール一覧</h1>
+                <nav class="level is-mobile" style="margin-top: 1rem;">
+                    <div class="level-item has-text-centered">
+                        <a href="index.html" class="button is-link is-light">トップページ</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>ツール一覧</h2>
-            <ul>
-                <li><a href="tool1.html">ツール1</a></li>
-                <li><a href="tool2.html">ツール2</a></li>
-                <!-- ここに新しいツールを追加できます -->
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 25c2.github.io</p>
+
+    <section id="tools" class="section">
+        <div class="container">
+            <div class="box">
+                <h2 class="title is-4">公開中のツール</h2>
+                <ul>
+                    <li><a href="tool1.html">ツール1の名前</a> - ツール1の簡単な説明</li>
+                    <li><a href="tool2.html">ツール2の名前</a> - ツール2の簡単な説明</li>
+                    <!-- 必要に応じてツールを追加してください -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2025 r</p>
+        </div>
     </footer>
 </body>
 </html>
