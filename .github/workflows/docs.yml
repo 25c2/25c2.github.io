@@ -9,6 +9,8 @@ on:
 
 jobs:
   docs:
+    permissions:
+      contents: write # gh-pages ブランチにデプロイするために書き込み権限を追加
     runs-on: ubuntu-latest
 
     steps:
