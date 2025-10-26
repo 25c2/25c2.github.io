@@ -4,5 +4,16 @@ import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler(),
-  theme: defaultTheme(),
+  theme: defaultTheme({
+    contributors: false,
+    navbar: [
+      { text: 'Home', link: '/' },
+      { text: 'Links', link: '/links/' },
+      { text: 'Tools', link: '/tools/' },
+    ],
+  }),
+  lang: 'ja-JP',
+  title: 'rさんのホームページ',
+  description: '色々',
+  
 })

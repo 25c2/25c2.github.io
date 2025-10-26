@@ -1,1 +1,4 @@
-'# Hello VuePress' 
+---
+home: true
+---
+# Hello VuePress
