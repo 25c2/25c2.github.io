@@ -8,8 +8,8 @@ export default defineUserConfig({
     contributors: false,
     navbar: [
       { text: 'Home', link: '/' },
+      { text: 'Blog', link: '/blog/' },
       { text: 'Links', link: '/links/' },
-      { text: 'Tools', link: '/tools/' },
     ],
   }),
   lang: 'ja-JP',
