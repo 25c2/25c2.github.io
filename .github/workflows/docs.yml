@@ -1,58 +1,40 @@
-name: docs
+name: r39.moe build
 
 on:
-  # trigger deployment on every push to main branch
   push:
     branches: [main]
-  # trigger deployment manually
   workflow_dispatch:
 
 jobs:
   docs:
     permissions:
-      contents: write # gh-pages ブランチにデプロイするために書き込み権限を追加
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
         with:
-          # fetch all commits to get last updated time or other git log info
           fetch-depth: 0
-
-      # --- pnpm のセットアップステップを削除しました ---
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          # choose node.js version to use
           node-version: 22
-          # cache deps for npm (pnpmからnpmに変更)
-          cache: npm # <--- キャッシュキーをnpmに変更
+          cache: npm
 
       - name: Install dependencies
-        # エラーが発生したため、より柔軟な `npm install` に変更します。
         run: npm install
 
       - name: Ensure executable permission for VuePress
-        # 'Permission denied' エラーを回避するため、
-        # vuepress 実行ファイルに明示的に実行権限を付与します。
-        run: chmod +x ./node_modules/.bin/vuepress # <--- NEW STEP ADDED
+        run: chmod +x ./node_modules/.bin/vuepress
 
-      # run build script
       - name: Build VuePress site
-        # ローカルの実行ファイルを直接パスで指定して実行します。
         run: ./node_modules/.bin/vuepress build docs
         
-      # please check out the docs of the workflow for more details
-      # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          # デプロイ先を gh-pages ブランチに戻します。
-          # GitHub Pagesの設定で、公開元ブランチを gh-pages に設定してください。
           target_branch: gh-pages
-          # deploy the default output dir of VuePress
           build_dir: docs/.vuepress/dist
         env:
-          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
