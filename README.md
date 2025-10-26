@@ -1,3 +1,3 @@
-# 25c2.github.io
-二億円
-<!--初めてcssフレームワーク使ってみたんだけど、便利っすね-->
+# r39.moe
+Vuepressに移行中
+[old](./v1/index.html)
