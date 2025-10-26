@@ -1,0 +1,24 @@
+{
+  "name": "r39.moe",
+  "version": "2.0.0",
+  "description": "Vuepressに移行中\r [old](./v1/index.html)",
+  "homepage": "https://github.com/25c2/25c2.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/25c2/25c2.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/25c2/25c2.github.io.git"
+  },
+  "license": "ISC",
+  "author": "r",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-rc.24"
+  }
+}
