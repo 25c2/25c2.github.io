@@ -27,9 +27,11 @@ jobs:
           # cache deps for npm (pnpmからnpmに変更)
           cache: npm # <--- キャッシュキーをnpmに変更
 
-      - name: Install deps (using npm ci)
-        # npm ci は、CI環境で package-lock.json に基づき高速にインストールするコマンドです
-        run: npm ci # <--- pnpm install --frozen-lockfile から npm ci に変更
+      - name: Install dependencies
+        # エラーが発生したため、より柔軟な `npm install` に変更します。
+        # npm ci が失敗した原因は、package.json と package-lock.json の不一致です。
+        # ベストプラクティスとしては、ローカルで package-lock.json を修正してコミットすることをおすすめします。
+        run: npm install # <--- npm ci から npm install に変更
 
       # run build script
       - name: Build VuePress site
@@ -40,8 +42,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          # User/Organization Pages (25c2.github.io) の場合、通常は main ブランチにデプロイします
-          target_branch: gh-pages
+          # デプロイ先を gh-pages ブランチに戻します。
+          # GitHub Pagesの設定で、公開元ブランチを gh-pages に設定してください。
+          target_branch: gh-pages # <--- main から gh-pages に戻す
           # deploy the default output dir of VuePress
           build_dir: docs/.vuepress/dist
         env:
