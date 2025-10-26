@@ -3,7 +3,6 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
-  base: '/',
   bundler: viteBundler(),
   theme: defaultTheme({
     contributors: false,
