@@ -29,16 +29,18 @@ jobs:
 
       - name: Install dependencies
         # エラーが発生したため、より柔軟な `npm install` に変更します。
-        # npm ci が失敗した原因は、package.json と package-lock.json の不一致です。
-        # ベストプラクティスとしては、ローカルで package-lock.json を修正してコミットすることをおすすめします。
-        run: npm install # <--- npm ci から npm install に変更
+        run: npm install
+
+      - name: Ensure executable permission for VuePress
+        # 'Permission denied' エラーを回避するため、
+        # vuepress 実行ファイルに明示的に実行権限を付与します。
+        run: chmod +x ./node_modules/.bin/vuepress # <--- NEW STEP ADDED
 
       # run build script
       - name: Build VuePress site
-        # 'sh: 1: vuepress: Permission denied' エラーを回避するため、
         # ローカルの実行ファイルを直接パスで指定して実行します。
-        run: ./node_modules/.bin/vuepress build docs # <--- npx vuepress build docs から直接パス実行に変更
-
+        run: ./node_modules/.bin/vuepress build docs
+        
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
@@ -46,7 +48,7 @@ jobs:
         with:
           # デプロイ先を gh-pages ブランチに戻します。
           # GitHub Pagesの設定で、公開元ブランチを gh-pages に設定してください。
-          target_branch: gh-pages # <--- main から gh-pages に戻す
+          target_branch: gh-pages
           # deploy the default output dir of VuePress
           build_dir: docs/.vuepress/dist
         env:
