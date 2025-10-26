@@ -35,7 +35,9 @@ jobs:
 
       # run build script
       - name: Build VuePress site
-        run: npm run docs:build # <--- pnpm docs:build から npm run docs:build に変更
+        # 'sh: 1: vuepress: Permission denied' エラーを回避するため、
+        # npx を使ってローカルにインストールされた vuepress コマンドを確実に実行します。
+        run: npx vuepress build docs # <--- npm run docs:build から npx vuepress build docs に変更
 
       # please check out the docs of the workflow for more details
       # @see https://github.com/crazy-max/ghaction-github-pages
