@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev main",
-    "build": "vuepress build main"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "devDependencies": {
     "vuepress": "^2.0.0-rc.24"
