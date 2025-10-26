@@ -1,7 +1,7 @@
 {
   "name": "r39.moe",
   "version": "2.0.0",
-  "description": "Vuepressに移行中\r [old](./v1/index.html)",
+  "description": "謎ホームページ",
   "homepage": "https://github.com/25c2/25c2.github.io#readme",
   "bugs": {
     "url": "https://github.com/25c2/25c2.github.io/issues"
@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev main",
+    "build": "vuepress build main"
   },
   "devDependencies": {
     "vuepress": "^2.0.0-rc.24"
