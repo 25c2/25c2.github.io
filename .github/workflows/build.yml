@@ -1,4 +1,4 @@
-name: r39.moe build
+name: docs
 
 on:
   push:
@@ -31,10 +31,14 @@ jobs:
       - name: Build VuePress site
         run: ./node_modules/.bin/vuepress build docs
         
+      - name: Add CNAME for Custom Domain # 新しいステップ
+        # リポジトリのルートにある CNAME ファイルをビルド結果のディレクトリにコピーします
+        run: cp CNAME docs/.vuepress/dist/
+
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          target_branch: builds
+          target_branch: gh-pages
           build_dir: docs/.vuepress/dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
