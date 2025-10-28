@@ -4,4 +4,4 @@ footer: Copyright © 2025-present r
 ---
 # 202510
 ---
-- [Hello](/01.html)
+- [Hello](./01.html)
