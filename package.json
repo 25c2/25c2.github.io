@@ -1,8 +1,8 @@
 {
   "name": "r39.moe",
   "version": "1.0.0",
-  "description": "Vuepressに移行中\r [old](./v1/index.html)",
-  "homepage": "https://github.com/25c2/25c2.github.io#readme",
+  "description": "my homepage",
+  "homepage": "r39.moe",
   "bugs": {
     "url": "https://github.com/25c2/25c2.github.io/issues"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/25c2/25c2.github.io.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "r",
   "type": "commonjs",
   "main": "index.js",
