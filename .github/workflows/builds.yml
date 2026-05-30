@@ -21,16 +21,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - name: Install
         run: |
           if [ -f package-lock.json ]; then
-            echo "package-lock.json found — running npm ci"
+            echo "package-lock.json found - running npm ci"
             npm ci
           else
-            echo "package-lock.json not found — running npm install"
+            echo "package-lock.json not found - running npm install"
             npm install
           fi
         working-directory: .
