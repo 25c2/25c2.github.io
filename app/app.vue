@@ -550,17 +550,35 @@ a:focus-visible {
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    padding: 20px 18px 12px;
+  }
+
   .page-shell {
-    padding: 56px 18px 80px;
+    padding: 32px 18px 56px;
+  }
+
+  .content {
+    gap: 24px;
+  }
+
+  .hero {
+    gap: 12px;
+  }
+
+  .block {
+    gap: 12px;
   }
 
   .card {
-    padding: 20px;
+    padding: 18px;
   }
 
   .footer-inner {
     align-items: flex-start;
     justify-content: flex-start;
+    gap: 12px;
+    padding: 16px 18px;
   }
 
   .footer-nav {
@@ -570,6 +588,10 @@ a:focus-visible {
 
   .theme-toggle {
     margin-left: auto;
+  }
+
+  .site-footer {
+    padding: 16px 18px 40px;
   }
 }
 </style>
